@@ -18,11 +18,11 @@ fn with_substitute(word: &Plaintext, substitue_method: fn(char) -> MorseChunk) -
     .collect::<Vec<MorseChunk>>().join("")
 }
 
-pub trait MorseSubstiution {
+pub trait MorseSubstitution {
     fn to_morse(&self, morse_type: MorseType) -> Morse;
 }
 
-impl MorseSubstiution for Plaintext {
+impl MorseSubstitution for Plaintext {
     fn to_morse(&self, morse_type: MorseType) -> Morse {
         match morse_type {
             MorseType::ITU => with_substitute(&self, itu_substitution),
