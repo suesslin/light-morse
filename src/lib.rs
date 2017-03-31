@@ -1,28 +1,15 @@
+mod substitution;
+
+use substitution::{MorseChunk, itu_substitution};
+
 pub type Plaintext = String;
 pub type Morse = String;
-pub type MorseChunk = String;
 
 // MORSE TYPES
 pub enum MorseType {
     ITU,
     American,
     Continental
-}
-
-// SUBSTITUTION
-//// Chars for substitution: ·−
-// International
-fn itu_substitution(chr: char) -> MorseChunk {
-    let morse_chunk: &str = {
-        match chr {
-            'A' => "·−",
-            'B' => "−···",
-            'C' => "−·−·",
-            'D' => "−··",
-            _ => panic!("{} couldn't be used in substitution.", chr)
-        }
-    };
-    morse_chunk.to_string()
 }
 
 // MORSE FUNCTIONS
