@@ -1,6 +1,6 @@
 extern crate morse;
 
-use morse::{Plaintext, Morse, MorseType, MorseSubstiution};
+use morse::{Morse, MorseType, MorseSubstiution};
 
 #[cfg(test)]
 mod tests {
