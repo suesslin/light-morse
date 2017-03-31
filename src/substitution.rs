@@ -33,7 +33,7 @@ pub fn itu_substitution(chr: char) -> MorseChunk {
             'Y' => "−·−−",
             'Z' => "−−··",
             ' ' => " ",
-            _ => 'panic!("{} couldn't be used in substitution.", chr)'
+            _ => panic!("{} couldn't be used in substitution.", chr)
         }
     };
     morse_chunk.to_string()
