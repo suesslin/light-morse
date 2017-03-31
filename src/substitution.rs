@@ -10,7 +10,30 @@ pub fn itu_substitution(chr: char) -> MorseChunk {
             'B' => "−···",
             'C' => "−·−·",
             'D' => "−··",
-            _ => panic!("{} couldn't be used in substitution.", chr)
+            'E' => "·",
+            'F' => "··−·",
+            'G' => "−−·",
+            'H' => "····",
+            'I' => "··",
+            'J' => "·−−−",
+            'K' => "−·−",
+            'L' => "·−··",
+            'M' => "−−",
+            'N' => "−·",
+            'O' => "−−−",
+            'P' => "·−−·",
+            'Q' => "−−·−",
+            'R' => "·−·",
+            'S' => "···",
+            'T' => "−",
+            'U' => "··−",
+            'V' => "···−",
+            'W' => "·−−",
+            'X' => "−··−",
+            'Y' => "−·−−",
+            'Z' => "−−··",
+            ' ' => " ",
+            _ => 'panic!("{} couldn't be used in substitution.", chr)'
         }
     };
     morse_chunk.to_string()
