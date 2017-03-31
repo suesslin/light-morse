@@ -1,6 +1,6 @@
 mod substitution;
 
-use substitution::{MorseChunk, itu_substitution};
+use substitution::{MorseChunk, itu_substitution, gerke_substitution};
 
 pub type Plaintext = String;
 pub type Morse = String;
@@ -26,6 +26,7 @@ impl MorseSubstitution for Plaintext {
     fn to_morse(&self, morse_type: MorseType) -> Morse {
         match morse_type {
             MorseType::ITU => with_substitute(&self, itu_substitution),
+            MorseType::Gerke => with_substitute(&self, gerke_substitution),
             _ => panic!("Other methods than ITU not implemented.")
         }
     }
