@@ -1,6 +1,6 @@
-extern crate morse;
+extern crate light_morse;
 
-use morse::{Morse, MorseType, MorseSubstiution};
+use light_morse::{Morse, MorseType, MorseSubstiution};
 
 #[cfg(test)]
 mod tests {

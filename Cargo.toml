@@ -1,5 +1,5 @@
 [package]
-name = "morse"
+name = "light-morse"
 version = "0.1.0"
 authors = ["Lukas A. Mueller <hello@lukasam.com>"]
 

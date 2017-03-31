@@ -1,4 +1,4 @@
-# morse-rs 
+# light-morse
 
 A library for Morse code implementation in Rust.
 
