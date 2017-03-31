@@ -3,7 +3,7 @@ pub type Morse = String;
 pub type MorseChunk = String;
 
 // MORSE TYPES
-pub enum MorseSelection {
+pub enum MorseType {
     ITU,
     American,
     Continental
@@ -26,27 +26,19 @@ fn itu_substitution(chr: char) -> MorseChunk {
 }
 
 // MORSE FUNCTIONS
-// International
-fn to_itu_morse(word: &Plaintext) -> Morse {
-    word.chars().into_iter().map(|chr|{ itu_substitution(chr) }).collect::<Vec<MorseChunk>>().join("")
-}
-
-// MAIN FUNCTION
-// Takes Morse functions as argument
-fn to_cetain_morse(word: &Plaintext, func_type: fn(&Plaintext) -> Morse) -> Morse {
-    // IDEA: Create closure that takes different substitution fn's.
-    func_type(word)
+fn with_substitute(word: &Plaintext, substitue_method: fn(char) -> MorseChunk) -> Morse {
+    word.chars().into_iter().map(|chr|{ substitue_method(chr) }).collect::<Vec<MorseChunk>>().join("")
 }
 
 pub trait MorseSubstiution {
-    fn to_morse(&self, m_type: MorseSelection) -> Morse;
+    fn to_morse(&self, morse_type: MorseType) -> Morse;
 }
 
 impl MorseSubstiution for Plaintext {
-    fn to_morse(&self, m_type: MorseSelection) -> Morse {
-        match m_type {
-            MorseSelection::ITU => to_cetain_morse(&self.to_uppercase(), to_itu_morse),
-            _ => panic!("Not implemented yet.")
+    fn to_morse(&self, morse_type: MorseType) -> Morse {
+        match morse_type {
+            MorseType::ITU => with_substitute(&self, itu_substitution),
+            _ => panic!("Other methods than ITU not implemented.")
         }
     }
 }
