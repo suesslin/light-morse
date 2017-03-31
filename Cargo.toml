@@ -2,5 +2,9 @@
 name = "light-morse"
 version = "0.1.0"
 authors = ["Lukas A. Mueller <hello@lukasam.com>"]
+description = "A library for Morse code implementation in Rust."
+license = "MIT"
+repository = "https://github.com/luki/light-morse"
+readme = "README.md"
 
 [dependencies]
