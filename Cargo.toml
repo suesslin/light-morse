@@ -1,6 +1,6 @@
 [package]
 name = "light-morse"
-version = "0.1.1"
+version = "0.2.0"
 authors = ["Lukas A. Mueller <hello@lukasam.com>"]
 description = "A library for Morse code implementation in Rust."
 license = "MIT"

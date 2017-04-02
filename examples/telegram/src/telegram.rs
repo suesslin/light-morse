@@ -1,18 +1,20 @@
-// extern crate light_morse;
-//
-// use light_morse::MorseChunk;
 extern crate ears;
 
 use ears::{Sound, AudioController};
 
+const DIR: &'static str = "resrc/";
+const EXT: &'static str = "ogg";
+
 pub fn play_sound(chunk: char) {
-    let mut sound: Sound;
-    match chunk {
+    let mut sound = match chunk {
         '·' =>  {
-            sound = Sound::new("short.ogg").unwrap()
+            Sound::new(&format!("{}{}.{}", DIR, "short", EXT)).unwrap()
         },
         '−' =>  {
-            sound = Sound::new("long.ogg").unwrap()
+            Sound::new(&format!("{}{}.{}", DIR, "long", EXT)).unwrap()
+        },
+        ' ' => {
+            Sound::new(&format!("{}{}.{}", DIR, "break", EXT)).unwrap()
         },
         _ => panic!("Unknown character: {}", chunk)
     };

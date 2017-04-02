@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = ["Lukas A. Mueller <hello@lukasam.com>"]
 
 [dependencies]
-light-morse = "0.1.1"
+light-morse = "0.2.0"
 clap = "2.22.2"
 ears = "0.4.0"
 itertools = "0.5.9"

@@ -1,9 +1,10 @@
 pub type MorseChunk = String;
+pub type PlainChunk = char;
 
 //// Chars for substitution: ·−
 
 // International (ITU)
-pub fn itu_substitution(chr: char) -> MorseChunk {
+pub fn itu_substitution(chr: PlainChunk) -> MorseChunk {
     let morse_chunk: &str = {
         match chr {
             'A' => "·−",
@@ -40,7 +41,7 @@ pub fn itu_substitution(chr: char) -> MorseChunk {
 }
 
 // Continental (Gerke)
-pub fn gerke_substitution(chr: char) -> MorseChunk {
+pub fn gerke_substitution(chr: PlainChunk) -> MorseChunk {
     let morse_chunk: &str = {
         match chr {
             'A' => "·−",
