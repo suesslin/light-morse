@@ -1,6 +1,3 @@
-// extern crate light_morse;
-//
-// use light_morse::MorseChunk;
 extern crate ears;
 
 use ears::{Sound, AudioController};
