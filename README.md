@@ -39,6 +39,42 @@ use light_morse::*;
 
 Enter the light-morse repository and run: `cargo test --verbose`
 
+## Telegram-CLI
+
+This is a full-functioning Telegram, playing sounds for the word(s) one writes.
+
+### How To Use
+
+1. Go into the /examples/telegram directory.
+2. Run `telegram --message "[MESSAGE]" --morse-type "ITU, Gerke or Morse"`.
+
+*Note*: `telegram` is `cargo run --`
+
+### Dependencies
+
+* [clap](https://github.com/kbknapp/clap-rs) - Command Line Argument Parser
+* [ears](https://github.com/jhasse/ears) - Play sounds and music
+* [itertools](https://github.com/bluss/rust-itertools) - Extra iterator adaptors, functions and macros
+
+### Sound Effects
+
+Cut as needed, originals by [soundsnap](soundsnap.com).
+
+## Building On
+
+Everything regarding how to build upon light-morse.
+
+### Adding Substitution / Morse Method
+
+A substitution method can be added, as long as it looks like the following:
+
+```Rust
+fn name(chr: PlainChunk) -> MorseChunk { /* Substitution for chars */ }
+```
+
+* PlainChunk: *char*
+* MorseChunk: *String*
+
 ## Versioning
 
 [SemVer](http://semver.org/) applies for versioning. For the versions available, see the [crate](https://crates.io/crates/light-morse).
