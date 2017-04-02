@@ -6,7 +6,7 @@ A library for Morse code implementation in Rust.
 [![Crates.io](https://img.shields.io/crates/v/light-morse.svg)](https://crates.io/crates/light-morse)
 [![license](https://img.shields.io/github/license/luki/light-morse.svg)](https://github.com/luki/light-morse/blob/master/LICENSE)
 
-[Documentation](https://docs.rs/light-morse/0.1.1/light_morse/)
+[Documentation](https://docs.rs/light-morse/0.2.0/light_morse/)
 
 ## Getting Started
 The following instructions will explain how to get any machine up-and-running for Rust
@@ -24,7 +24,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-light-morse = "0.1.1"
+light-morse = "0.2.0"
 ```
 
 and this to your crate root:
@@ -37,7 +37,7 @@ use light_morse::*;
 
 ## Tests
 
-Enter the light-morse repository and run: `cargo run --verbose`
+Enter the light-morse repository and run: `cargo test --verbose`
 
 ## Versioning
 
