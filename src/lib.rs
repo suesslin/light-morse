@@ -1,21 +1,25 @@
 mod substitution;
 
-use substitution::{MorseChunk, itu_substitution, gerke_substitution};
+use substitution::{gerke_substitution, itu_substitution, MorseChunk};
 
 pub type Plaintext = String;
 pub type Morse = String;
 
 // MORSE TYPES
 pub enum MorseType {
-    ITU, // International
+    ITU,   // International
     Morse, //American
-    Gerke // Continental
+    Gerke, // Continental
 }
 
 // MORSE FUNCTIONS
 fn with_substitute(word: &Plaintext, substitue_method: fn(char) -> MorseChunk) -> Morse {
-    word.to_uppercase().chars().into_iter().map(|chr|{ substitue_method(chr) })
-    .collect::<Vec<MorseChunk>>().join("")
+    word.to_uppercase()
+        .chars()
+        .into_iter()
+        .map(substitue_method)
+        .collect::<Vec<MorseChunk>>()
+        .join("")
 }
 
 pub trait MorseSubstitution {
@@ -27,7 +31,7 @@ impl MorseSubstitution for Plaintext {
         match morse_type {
             MorseType::ITU => with_substitute(&self, itu_substitution),
             MorseType::Gerke => with_substitute(&self, gerke_substitution),
-            _ => panic!("Other methods than ITU not implemented.")
+            _ => panic!("Other methods than ITU not implemented."),
         }
     }
 }

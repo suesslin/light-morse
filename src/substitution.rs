@@ -34,7 +34,7 @@ pub fn itu_substitution(chr: PlainChunk) -> MorseChunk {
             'Y' => "−·−−",
             'Z' => "−−··",
             ' ' => " ",
-            _ => panic!("{} couldn't be used in substitution.", chr)
+            _ => panic!("{} couldn't be used in substitution.", chr),
         }
     };
     morse_chunk.to_string()
@@ -71,7 +71,7 @@ pub fn gerke_substitution(chr: PlainChunk) -> MorseChunk {
             'Y' => "−−···",
             'Z' => "·−−··",
             ' ' => " ",
-            _ => panic!("{} couldn't be used in substitution.", chr)
+            _ => panic!("{} couldn't be used in substitution.", chr),
         }
     };
     morse_chunk.to_string()
